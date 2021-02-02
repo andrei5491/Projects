@@ -1,0 +1,17 @@
+#backgroundimage{
+
+	height: 250px;
+	width: 300px;
+}
+#paragraf {
+	padding: 10px;
+	margin: 20px;
+	color: blue;
+	font-style: italic;
+}
+#textbox{
+	width: 100px;
+}
+#clickme {
+	color: blue
+}

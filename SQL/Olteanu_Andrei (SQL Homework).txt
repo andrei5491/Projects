@@ -1,0 +1,75 @@
+SQL homework
+Using the codecademy/w3schools sql emulator write the sql statements for:
+
+
+1. Create a table: "Account", with the following columns: Id, Owner, Balance, CreationDate, ExpirationDate
+
+2. Insert 10 rows in Account;
+
+3. Select all rows;
+
+4. Select the rows where Balance is less than 10000;
+
+5. Select the rows where Balance is greater than 1000 and expiration date is less than 2 days from today;
+
+6. Update the balance for one of the id;
+
+7. Delete one of the rows;
+
+8. Calculate the total balance of all accounts;
+
+9. Calculate the average balance of accounts grouped by owner;
+
+*Note:
+
+- copy each statement in a txt document and upload the file on the platform.
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+create table Account (
+	ID int,
+	Owner char(40),
+	Balance float,
+	CreationDate datetime,
+    	ExpirationDate datetime
+    )
+
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (1, 'Andrei', 5000, '2009-12-08', '2015-12-08'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (2, 'Bogdan', 1000, '2012-11-05', '2017-11-05'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (3, 'Cosmina', 7000, '2002-01-10', '2008-01-11'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (4, 'Daniel', 200, '2013-05-08', '2015-05-08'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (5, 'Emilia', 9999, '2007-12-21', '2017-12-21'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (6, 'Florin', 120000, '2010-06-05', '2018-06-04'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (7, 'George', 4000, '2005-06-06', '2016-06-05'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (8, 'Horia', 3000, '2018-12-08', '2024-12-08'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (9, 'Ionut', 800, '2019-03-01', '2022-04-05'),
+insert into Account (ID , Owner, Balance, CreationDate, ExpirationDate) values (10, 'Jasmina', 11893, '2017-09-29', '2021-09-28'),
+
+
+SELECT * FROM [Account];
+
+
+SELECT * FROM [Account] where Balance < 10000;
+
+
+SELECT * FROM [Account] where Balance > 1000 AND ExpirationDate < (getDate(), D, -2)  
+
+
+update Account set balance = 999 where id=1;
+
+
+delete from Account where Owner= 'Ionut';
+
+
+SELECT SUM(Balance) AS SUMBalance FROM Account;
+
+SELECT
+  AVG(balance),
+  Owner
+FROM Account
+GROUP BY Owner;
+
+
+
+
